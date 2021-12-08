@@ -1,86 +1,51 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Tutorial Membuat CRUD Pada Laravel - www.malasngoding.com</title>
-</head>
-<body>
 @extends('layout.happy')
-@section('title', 'Data Absen')
 
+@section('title', 'Dashboard')
 
 @section('konten')
-    <div class="rounded border cont-ktn">
+
+<div class="container">
+    <h3 class="text-center">Tambah Data Pegawai</h3>
+    <br/>
+	<a href="/absen" class=""> Kembali</a>
+	<br/>
+	<form action="/absen/store" method="post" class="rounded">
+		{{ csrf_field() }}
+        <div class=" mt-5 ">
+            <div class="col-4"> Pegawai : </div>
+            <div class="col-4"> <select id="IDPegawai" name="IDPegawai" required="required">
+                @foreach($pegawai as $p)
+                    <option value="{{ $p->pegawai_id }}"> {{ $p->pegawai_nama }}</option>
+                @endforeach
+            </select>
+            </div>
+        </div>
         <br>
-        <div class="judul">
-            <h1 id="jdl">TAMBAH DATA ABSEN</h1>
-        </div>
-        <br><br>
 
-	<a href="/absen"> Kembali</a>
-    <form action="/absen/simpan" method="post">
-        {{ csrf_field() }}
-
-	<br/>
-	<br/>
-        <div class="form-body">
-            <div class="col">
-                    <div class="form-group">
-                        <label for="nama" class="col-sm-4 control-label">Nama Pegawai :</label>
-                        <div class='col-sm-8 input-group date' id='nama'>
-                            <select class="form-control" name="IDPegawai">
-                                @foreach($pegawai as $p )
-                                    <option value="{{ $p->pegawai_id }}"> {{ $p->pegawai_nama }}</option>
-                                @endforeach
-                            </select>
+        <div class="mt-5 form-group">
+            <label for="datetimepicker" class="control-label"></label>
+                <div class="col-4"> Tanggal :</div>
+                <div class="col-sm-8 input-group date" id="datetimepicker">
+                    <input type='text' required="required" class="form-control" name="Tanggal" />
+                        <div class="input-group-addon input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-calendar"></i></span>
                         </div>
-                    </div>
                 </div>
-
-</body>
-</html>
-            <div class="col">
-                    <div class="form-group">
-                        <label for="dtpickerdemo" class="col-sm-4 control-label">Tanggal :</label>
-                        <div class='col-sm-8 input-group date' id='dtpickerdemo'>
-                            <input type='text' class="form-control" name="Tanggal" required="required" />
-                            <span class="input-group-addon">
-                                <span class="glyphicon glyphicon-calendar"></span>
-                            </span>
-                        </div>
-                    </div>
-                <script type="text/javascript">
-                    $(function() {
-                        $('#dtpickerdemo').datetimepicker({
-                            format: "YYYY-MM-DD hh:mm:ss",
-                            "defaultDate": new Date(),
-                            locale : "id"
-                        });
-                    });
-                </script>
-            </div>
-            <div class="col">
-                    <div class="form-group">
-                        <label for="status" class="col-sm-4 control-label">Status :</label>
-                        <div class='col-sm-8 input-group date' id='radiopicker'>
-                            <input type="radio" id="h" name="Status" value="H">
-                            <label for="h">HADIR</label><br>
-                            <input type="radio" id="a" name="Status" value="A" checked="checked">
-                            <label for="a">TIDAK HADIR</label><br>
-                        </div>
-                    </div>
-            </div>
-            <div class="col">
-                    <div class="form-group">
-                        <div class="col-sm-6 submit-btn">
-                            <input type="submit" class="btn btn-default" value="Simpan Data">
-                        </div>
-                        <div class="col-sm-6 submit-btn">
-                            <a href="/absen" class="btn btn-default" role="button"> Kembali</a>
-                        </div>
-                        <br><br>
-                    </div>
-            </div>
         </div>
-    </form>
-    </div>
+            <br>
+        <div class="mt-3">
+        <div class="col-sm-4"> Status : </div>
+        <div class="col-8">
+            <input type="radio" id="hadir" name="Status" value="H">
+            <label for="hadir">HADIR</label><br>
+            <input type="radio" id="tidak" name="Status" value="T" checked="checked">
+            <label for="tidak">TIDAK HADIR</label>
+        </div>
+        </div>
+		<div class="d-grid gap-2 col-12 mx-auto mt-3">
+            <center> <input type="submit" value="Simpan Data"> </center>
+        </div>
+	</form>
+</div>
+
 @endsection

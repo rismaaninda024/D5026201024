@@ -5,65 +5,56 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-
 class AbsenController extends Controller
 {
+    //
     public function index()
     {
-        // mengambil data dari table absen
         $absen = DB::table('absen')->get();
-
-        // mengirim data absen ke view index
         return view('absen.index', ['absen' => $absen]);
     }
-
     // method untuk menampilkan view form tambah absen
     public function tambah()
     {
+        $pegawai = DB::table('pegawai')->orderBy('pegawai_nama', 'asc')->get();
 
         // memanggil view tambah
-        return view('absen.tambah');
+        return view('absen.tambah', ['pegawai' => $pegawai]);
     }
-
-    // method untuk insert data ke table absen
     public function store(Request $request)
     {
-        // insert data ke table absen
         DB::table('absen')->insert([
-            'IDPegawai' => $request->idpegawai,
-            'Tanggal' => $request->tanggal,
-            'Status' => $request->status
+            'IDPegawai' => $request->IDPegawai,
+            'Tanggal' => $request->Tanggal,
+            'Status' => $request->Status
         ]);
-        // alihkan halaman ke halaman absen
         return redirect('/absen');
     }
-
     // method untuk edit data absen
     public function edit($id)
     {
-                // mengambil data absen berdasarkan id yang dipilih
-                $absen = DB::table('absen')->where('ID', $id)->get();
-                return view('absen.edit', ['absen' => $absen]);
+        // mengambil data absen berdasarkan id yang dipilih
+        $absen = DB::table('absen')->where('ID', $id)->get();
 
-                $pegawai = DB::table('pegawai')->orderBy('pegawai_nama', 'asc')->get();
+        $pegawai = DB::table('pegawai')->orderBy('pegawai_nama', 'asc')->get();
 
-                $status = " Mengedit";
+        $status = "Sedang Mengedit";
 
-           // passing data absen yang didapat ke view edit.blade.php
-           return view('absen.edit', ['absen' => $absen, 'pegawai' => $pegawai, 'status' => $status]);
-        }
-        public function update(Request $request)
-        {
-            DB::table('absen')->where('ID', $request->id)->update([
-                'IDPegawai' => $request->IDPegawai,
-                'Tanggal' => $request->Tanggal,
-                'Status' => $request->Status
-            ]);
-            return redirect('/absen');
-        }
-        public function hapus($id)
-        {
-            DB::table('absen')->where('ID', $id)->delete();
-            return redirect('/absen');
-        }
+        // passing data absen yang didapat ke view edit.blade.php
+        return view('absen.edit', ['absen' => $absen, 'pegawai' => $pegawai, 'status' => $status]);
     }
+    public function update(Request $request)
+    {
+        DB::table('absen')->where('ID', $request->id)->update([
+            'IDPegawai' => $request->IDPegawai,
+            'Tanggal' => $request->Tanggal,
+            'Status' => $request->Status
+        ]);
+        return redirect('/absen');
+    }
+    public function hapus($id)
+    {
+        DB::table('absen')->where('ID', $id)->delete();
+        return redirect('/absen');
+    }
+}

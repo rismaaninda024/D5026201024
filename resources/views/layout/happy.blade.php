@@ -36,8 +36,11 @@
         <div class="col-menu-pil">
             <h3 id=menu>MENU</h3>
             <a href="/pegawai" class="btn btn-block" role="button">Pegawai </a>
+            <br>
             <a href="/absen" class="btn btn-block" role="button">  Absen </a>
+            <br>
             <a href="" class="btn btn-block" role="button">  Minggu Depan </a>
+            <br>
             <a href="" class="btn btn-block" role="button"> Praktikum </a>
         </div>
         <div class="col-section">
