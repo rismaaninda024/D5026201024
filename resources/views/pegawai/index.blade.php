@@ -4,16 +4,23 @@
 	<title>Tutorial Membuat CRUD Pada Laravel - www.malasngoding.com</title>
 </head>
 <body>
+@extends('layout.happy')
+@section('title', 'Data Absen')
 
-	<h2>www.malasngoding.com</h2>
-	<h3>Data Pegawai</h3>
+@section('konten')
+    <div class="rounded border cont-ktn">
+        <br>
+    <div class="judul">
+        <h1 id="judull">DATA PEGAWAI</h1>
+    </div>
 
-	<a href="/pegawai/tambah"> + Tambah Pegawai Baru</a>
-
-	<br/>
 	<br/>
 
 	<table border="1">
+        <br/>
+        <br/>
+    <div class="col-tabel">
+    <table class="table table-striped table-hover table-bordered align-middle">
 		<tr>
 			<th>Nama</th>
 			<th>Jabatan</th>
@@ -39,3 +46,10 @@
 
 </body>
 </html>
+        <div class="add-btn">
+            <a href="/pegawai/tambah" class="btn btn-default" role="button"> + Tambah Pegawai Baru</a>
+        </div>
+    </table>
+</div>
+</div>
+@endsection

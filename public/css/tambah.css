@@ -1,0 +1,51 @@
+*{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+
+}
+.col-header { grid-area: header; }
+.col-menu-pil { grid-area: menu; }
+.col-section { grid-area: main; }
+.col-foot { grid-area: footer; }
+.grid-container {
+display: grid;
+grid-template-areas:
+    'header header header header header header'
+    'menu main main main main main'
+    'footer footer footer footer footer footer';
+grid-gap: 20px;
+background-color: #f7fdbf;
+padding: 10px;
+}
+.grid-container > div {
+background-color:#ffffff;
+padding: 20px 0;
+border-radius: 15px;
+}
+#judull{
+    text-align: center;
+    font-weight: 900;
+}
+#menu,  #status{
+    text-align: center;
+}
+label{
+    font-weight: 200;
+}
+.form-body{
+    padding-left: 15px;
+    padding-right: 30px
+}
+a:visited, a:active, a:hover, a:link{
+    color: #5b86eb;
+    text-decoration: none;
+}
+.submit-btn{
+    padding-left: 20rem;
+
+}
+.col-tabel{
+    padding: 5 px
+}
+.btn-default{
+    background-color: #f2f4f8;
+}
