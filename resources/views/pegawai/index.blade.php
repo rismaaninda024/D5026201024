@@ -1,8 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Tutorial Membuat CRUD Pada Laravel - www.malasngoding.com</title>
-</head>
+
 <body>
 @extends('layout.happy')
 @section('title', 'Data Absen')
@@ -41,14 +37,11 @@
 			</td>
 		</tr>
 		@endforeach
-	</table>
-
-
-</body>
-</html>
         <div class="add-btn">
             <a href="/pegawai/tambah" class="btn btn-default" role="button"> + Tambah Pegawai Baru</a>
         </div>
+
+
     </table>
 </div>
 </div>

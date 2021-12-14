@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Tutorial Membuat CRUD Pada Laravel - www.malasngoding.com</title>
-</head>
-<body>
+
 @extends('layout.happy')
-@section('title', 'Data Absen')
+@section('title', 'Data Pegawai')
 
 
 
@@ -17,7 +12,7 @@
     <div class="rounded border cont-ktn">
         <br>
         <div class="judul">
-            <h1 id="judull">TAMBAH DATA PEGAWAI</h1>
+            <h1 id="judull">UBAH DATA PEGAWAI</h1>
         </div>
         <br><br>
 
@@ -73,10 +68,6 @@
         </div>
 	</form>
 
-
-
-</body>
-</html>
 	@endforeach
 </div>
 @endsection

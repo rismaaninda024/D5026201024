@@ -26,10 +26,10 @@
             </div></center>
             <div class="col">
                <center> <h4  style="font-weight: 800;" id=nrp>
-                    5026201024
+                   Risma Aninda
                 </h4></center>
                 <center> <h4 style="font-weight: 800;" id=name>
-                    Risma Aninda
+                    5026201024
                 </h4></center>
             </div>
         </div>
@@ -39,7 +39,7 @@
             <br>
             <a href="/absen" class="btn btn-block" role="button">  Absen </a>
             <br>
-            <a href="" class="btn btn-block" role="button">  Minggu Depan </a>
+            <a href="/mouse" class="btn btn-block" role="button"> Mouse </a>
             <br>
             <a href="" class="btn btn-block" role="button"> Praktikum </a>
         </div>

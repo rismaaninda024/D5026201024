@@ -36,9 +36,9 @@
         <div class="mt-3">
         <div class="col-sm-4"> Status : </div>
         <div class="col-8">
-            <input type="radio" id="hadir" name="Status" value="H">
-            <label for="hadir">HADIR</label><br>
-            <input type="radio" id="tidak" name="Status" value="T" checked="checked">
+            <br> <input type="radio" id="hadir" name="Status" value="H">
+            <label for="hadir">HADIR</label>
+            <br> <input type="radio" id="tidak" name="Status" value="T" checked="checked">
             <label for="tidak">TIDAK HADIR</label>
         </div>
         </div>

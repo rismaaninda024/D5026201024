@@ -58,3 +58,12 @@ Route::get('/absen/edit/{id}','AbsenController@edit');
 Route::post('/absen/update','AbsenController@update');
 Route::get('/absen/hapus/{id}','AbsenController@hapus');
 
+//route CRUD
+Route::get('/mouse','MouseController@index');
+Route::get('/mouse/tambah','MouseController@tambah');
+Route::post('/mouse/store','MouseController@store');
+Route::get('/mouse/edit/{id}','MouseController@edit');
+Route::post('/mouse/update','MouseController@update');
+Route::get('/mouse/hapus/{id}','MouseController@hapus');
+Route::get('/mouse/cari','MouseController@cari');
+Route::get('/mouse/view/{id}','MouseController@detail');

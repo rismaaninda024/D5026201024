@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Tutorial Membuat CRUD Pada Laravel - www.malasngoding.com</title>
-</head>
-<body>
+
 @extends('layout.happy')
 @section('title', 'Data Absen')
 
@@ -71,7 +66,6 @@
         </div>
 	</form>
 
-</body>
-</html>
+
     </div>
 @endsection
