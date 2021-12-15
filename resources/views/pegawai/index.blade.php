@@ -1,7 +1,5 @@
-
-<body>
 @extends('layout.happy')
-@section('title', 'Data Absen')
+@section('title', 'Data Pegawai')
 
 @section('konten')
     <div class="rounded border cont-ktn">
@@ -10,7 +8,12 @@
         <h1 id="judull">DATA PEGAWAI</h1>
     </div>
 
-	<br/>
+    <div>
+        <form action="/pegawai/cari" method="GET" style=" margin-top: 1rem">
+            <input type="text" class="form-control" name="cari" placeholder="Cari Pegawai . . ." value="{{ old('cari') }}">
+            <input type="submit" class="btn btn-primary" value="Cari" style="margin-top: 1rem">
+        </form>
+    </div>
 
 	<table border="1">
         <br/>
@@ -34,6 +37,8 @@
 				<a href="/pegawai/edit/{{ $p->pegawai_id }}">Edit</a>
 				|
 				<a href="/pegawai/hapus/{{ $p->pegawai_id }}">Hapus</a>
+                |
+				<a href="/pegawai/view/{{ $p->pegawai_id }}">Detail</a>
 			</td>
 		</tr>
 		@endforeach
@@ -43,6 +48,7 @@
 
 
     </table>
+    {{ $pegawai->links() }}
 </div>
 </div>
 @endsection

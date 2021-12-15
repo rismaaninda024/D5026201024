@@ -1,7 +1,5 @@
 @extends('layout.happy')
 
-@section('title', 'Dashboard')
-
 @section('konten')
 
 <div class="container">
@@ -12,12 +10,15 @@
 	<form action="/absen/store" method="post" class="rounded">
 		{{ csrf_field() }}
         <div class=" mt-5 ">
-            <div class="col-4"> Pegawai : </div>
-            <div class="col-4"> <select id="IDPegawai" name="IDPegawai" required="required">
-                @foreach($pegawai as $p)
-                    <option value="{{ $p->pegawai_id }}"> {{ $p->pegawai_nama }}</option>
-                @endforeach
-            </select>
+            <div class="col-4" >
+                <label>Nama Pegawai</label>
+            </div>
+            <div class="col-4" >
+                <select id="IDPegawai" name="IDPegawai" required="required">
+                    @foreach($pegawai as $p)
+                        <option value="{{ $p->pegawai_id }}"> {{ $p->pegawai_nama }}</option>
+                    @endforeach
+                </select>
             </div>
         </div>
         <br>

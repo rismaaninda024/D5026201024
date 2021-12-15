@@ -20,14 +20,16 @@
 		{{ csrf_field() }}
 
         <div class="form-body">
-            <div class="col">
-                    <div class="form-group">
-                        <label for="nama" class="col-sm-4 control-label">Nama :</label>
-                            <div class='col-sm-8 input-group date' id='nama'>
-		                    <input type="text" class="form-control" name="nama" required="required"> <br/>
-                            </div>
-                    </div>
-            </div>
+            <div class="col-md-4" style="margin-top: 1rem; margin-bottom:1rem">
+                    <label>Nama Pegawai</label>
+                </div>
+                <div class="col-md-8 form-group" style="margin-top: 1rem; margin-bottom:1rem">
+                    <select id="IDPegawai" name="IDPegawai" required="required">
+                        @foreach($pegawai as $p)
+                            <option value="{{ $p->pegawai_id }}"> {{ $p->pegawai_nama }}</option>
+                        @endforeach
+                    </select>
+                </div>
             <div class="col">
                     <div class="form-group">
                         <label for="jabatan" class="col-sm-4 control-label">Jabatan :</label>

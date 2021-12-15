@@ -41,7 +41,7 @@
             <br>
             <a href="/mouse" class="btn btn-block" role="button"> Mouse </a>
             <br>
-            <a href="" class="btn btn-block" role="button"> Praktikum </a>
+            <a href="/mutasi" class="btn btn-block" role="button"> Mutasi </a>
         </div>
         <div class="col-section">
             @section('konten')
