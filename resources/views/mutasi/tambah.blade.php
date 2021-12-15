@@ -2,12 +2,6 @@
 @extends('layout.happy')
 @section('title', 'Data Mutasi')
 
-
-
-	<a href="/mutasi"> Kembali</a>
-
-	<br/>
-	<br/>
 @section('konten')
     <div class="rounded border cont-ktn">
         <br>
@@ -20,15 +14,13 @@
 		{{ csrf_field() }}
 
         <div class="form-body">
-            <div class="col-sm-4 control label" >
-                <label>Nama Pegawai</label>
-            </div>
-            <div class="col-sm-4 form-group " >
-                <select id="idpegawai" name="idpegawai" required="required">
-                    @foreach($pegawai as $p)
-                        <option value="{{ $p->pegawai_id }}"> {{ $p->pegawai_nama }}</option>
-                    @endforeach
-                </select>
+            <div class="col">
+                    <div class="form-group">
+                        <label for="nama" class="col-sm-4 control-label">ID Pegawai :</label>
+                            <div class='col-sm-8 input-group date' id='idpegawai'>
+		                    <input type="number" class="form-control" name="idpegawai" required="required"> <br/>
+                            </div>
+                    </div>
             </div>
             <div class="col">
                     <div class="form-group">

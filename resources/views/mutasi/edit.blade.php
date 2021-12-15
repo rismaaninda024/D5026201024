@@ -17,17 +17,15 @@
 		{{ csrf_field() }}
 		<input type="hidden" name="id" value="{{ $p->mutasi_id }}"> <br/>
 
-        <div class="col-md-4" style="margin-top: 1rem; margin-bottom:1rem">
-            <input type="hidden" name="id" value="{{ $p->ID }}">
-            <label>Nama Pegawai</label>
-        </div>
-        <div class="col-md-8 form-group" style="margin-top: 1rem; margin-bottom:1rem">
-        <select id="IDPegawai" name="IDPegawai" required="required">
-            @foreach($pegawai as $peg)
-                <option value="{{ $peg->pegawai_id }}" @if ($peg->pegawai_id === $p->IDPegawai) selected="selected" @endif> {{ $peg->pegawai_nama }}</option>
-            @endforeach
-        </select>
-        </div>
+        <div class="form-body">
+            <div class="col">
+                    <div class="form-group">
+                        <label for="nama" class="col-sm-4 control-label">ID Pegawai :</label>
+                            <div class='col-sm-8 input-group date' id='idpegawai'>
+                                <input type="number" class="form-control" name="idpegawai" required="required" value="{{ $p->mutasi_idpegawai }}"> <br/>
+                            </div>
+                    </div>
+            </div>
             <div class="col">
                 <div class="form-group">
                     <label for="jabatan" class="col-sm-4 control-label">Departemen :</label>

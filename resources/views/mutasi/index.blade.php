@@ -21,7 +21,7 @@
     <div class="col-tabel">
     <table class="table table-striped table-hover table-bordered align-middle">
 		<tr>
-			<th>Nama Pegawai</th>
+			<th>ID Pegawai</th>
 			<th>Departemen</th>
 			<th>Sub Departemen</th>
 			<th>Mulai Bertugas</th>
@@ -29,7 +29,7 @@
 		</tr>
 		@foreach($mutasi as $p)
 		<tr>
-			<td>{{ $p->pegawai_nama }}</td>
+			<td>{{ $p->mutasi_idpegawai }}</td>
 			<td>{{ $p->mutasi_departemen }}</td>
 			<td>{{ $p->mutasi_subdepartemen}}</td>
 			<td>{{ $p->mutasi_mulaibertugas }}</td>
@@ -39,6 +39,7 @@
 				<a href="/mutasi/hapus/{{ $p->mutasi_id }}">Hapus</a>
                 |
 				<a href="/mutasi/view/{{ $p->mutasi_id }}">Detail</a>
+
 			</td>
 		</tr>
 	@endforeach

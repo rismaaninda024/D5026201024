@@ -11,11 +11,7 @@ class MutasiController extends Controller
     public function index()
     {
     	// mengambil data dari table pegawai
-    	//$mutasi = DB::table('mutasi')->paginate(3);
-        $mutasi = DB::table('mutasi')
-       ->join('pegawai', 'mutasi.mutasi_idpegawai', '=', 'pegawai.pegawai_id')
-       ->select('mutasi.*', 'pegawai.pegawai_nama')
-       ->paginate() ;
+    	$mutasi = DB::table('mutasi')->paginate(3);
 
     	// mengirim data pegawai ke view index
     	return view('mutasi.index',['mutasi' => $mutasi]);
